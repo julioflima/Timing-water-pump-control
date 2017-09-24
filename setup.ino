@@ -1,10 +1,16 @@
 void setup() 
 {
-  Serial.begin(9600); 
+  //Setting the baudrate.
+  Serial.begin(115200); 
    
+  //Setting the LCD.
   lcd.begin(16, 2);  //set up the LCD's number of columns and rows:
   lcd.clear();
   lcd.setCursor(0,0);
+  
+  //Setting the Timer 0.
+  Timer1.initialize(100000);  //Set a timer of length 100000 microseconds (or 0.1 sec - or 10Hz => the led will blink 5 times, 5 cycles of on-and-off, per second)
+  Timer1.attachInterrupt(happen);  //Attach the service routine here
   
   //Declare the lamps to output.
   pinMode(LAMP_1,OUTPUT);
@@ -33,5 +39,4 @@ void setup()
   digitalWrite(LAMP_10, HIGH);
   digitalWrite(LAMP_11, HIGH);
   digitalWrite(LAMP_12, HIGH);
-    
 }
