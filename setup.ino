@@ -21,7 +21,7 @@ void setup()
   pinMode(LAMP_12,OUTPUT);
    
   //Put them to level high, that's will switch off.
-	digitalWrite(LAMP_1, HIGH);
+  digitalWrite(LAMP_1, HIGH);
   digitalWrite(LAMP_2, HIGH);
   digitalWrite(LAMP_3, HIGH);
   digitalWrite(LAMP_4, HIGH);
